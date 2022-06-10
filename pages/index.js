@@ -1,209 +1,290 @@
-import Head from 'next/head'
+import React from "react";
+import Image from "next/image";
+import Head from "next/head";
+import LocationImage from "../public/location.png";
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Event Page</title>
+        <meta name="description" content="Event details page" />
       </Head>
+      <div className="relative w-screen h-300 sm:hidden">
+        <Image src={"/headimage375.png"} alt="head image" layout="fill" />
+      </div>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+      <div className="relative hidden sm:block w-screen h-80 lg:hidden">
+        <Image src={"/headimage640.png"} alt="head image" layout="fill" />
+      </div>
+
+      <div className="relative hidden lg:block w-screen h-360 xl:hidden">
+        <Image src={"/headimage1024.png"} alt="head image" layout="fill" />
+      </div>
+
+      <div className="relative hidden xl:block w-screen h-400 2xl:hidden">
+        <Image src={"/headimage1280.png"} alt="head image" layout="fill" />
+      </div>
+
+      <div className="relative hidden 2xl:block w-screen h-400 3xl:hidden">
+        <Image src={"/headimage1536.png"} alt="head image" layout="fill" />
+      </div>
+
+      <div className="relative hidden 3xl:block w-screen h-480">
+        <Image src={"/headimage1920.png"} alt="head image" layout="fill" />
+      </div>
+
+      <div className="bg-background p-6 sm:px-[6.3rem] lg:pt-6 lg:pb-20 lg:px-28 xl:px-40 2xl:px-52 3xl:px-[390px] 3xl:pb-[160px]">
+        <h1 className="text-2xl text-white pb-2 font-bold lg:text-[32px]">
+          Event name
         </h1>
+        <span className="text-sm text-grey font-normal sm:text-base lg:text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Erat quam
+          eget nulla lacus, volutpat integer lorem. Sociis suspendisse mi purus
+          sit erat dictum dignissim
+        </span>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        {/* icons section - event */}
+        <div className="pt-5">
+          <div className="flex justify-between">
+            <div>
+              <Image src={"/pinIcon.png"} width="16" height="16" />
+              <span className="align-top text-sm text-white pl-2">
+                Lorem Ipsum
+              </span>
+            </div>
+            <div>
+              <Image src={"/calendar.png"} width="16" height="16" />
+              <span className="align-top text-sm text-white pl-2">
+                10th May
+              </span>
+            </div>
+          </div>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="flex justify-between pt-4">
+            <div>
+              <Image src={"/mic.png"} width="16" height="16" />
+              <span className="align-top text-sm text-white pl-2">
+                Dance and arts
+              </span>
+            </div>
+            <div>
+              <Image src={"/clock.png"} width="16" height="16" />
+              <span className="align-top text-sm text-white pl-2">
+                07:00 PM
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
+        {/* icons section - event */}
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+        <div className="flex flex-col lg:flex-row justify-between py-4 sm:py-8 lg:-mb-16">
+          <div className="relative w-auto h-[188px] sm:w-auto sm:h-[240px] lg:w-[372px] lg:h-[192px] xl:w-[450px] xl:h-[240px] 2xl:w-[528px] 2xl:h-[240px] mb-4 sm:mb-8">
+            <Image src={"/location.png"} alt="location image" layout="fill" />
+          </div>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+          <div className="hidden lg:block lg:mt-1">
+            <hr className="border-1 border-grey pb-6" />
+            <div className="flex justify-between pb-4">
+              <div className="flex mr-28 xl:mr-52 2xl:mr-72">
+                <div className="pr-2">
+                  <Image src={"/profilepic.png"} width="48" height="48" />
+                </div>
+                <div>
+                  <h2 className="text-base text-white font-bold pt-1">
+                    Event Organiser name
+                  </h2>
+                  <span className="align-top text-xs text-grey font-semibold">
+                    12 events
+                  </span>
+                </div>
+              </div>
+              <div className="">
+                <Image src={"/globeicon.png"} width="36" height="36" />
+              </div>
+            </div>
+            <hr className="border-1 border-grey pb-1" />
+            <div className="flex justify-between sm:pt-7">
+              <div>
+                <span className="align-top text-sm text-grey font-medium">
+                  Ticket starts at
+                </span>
+                <div className="flex">
+                  <h2 className="text-lgx text-white font-bold pt-1">15,00</h2>
+                  <div className="mt-3.5 pl-2">
+                    <span className="text-xs text-white font-semibold">
+                      EUR
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button className="text-black bg-white font-bold w-[168px] lg:w-[200px] xl:w-[240px] sm:w-60 h-12 rounded-1xl">
+                  Buy a Ticket
+                </button>
+              </div>
+            </div>
+          </div>
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+          <div className="lg:hidden">
+            <div className="py-2">
+              <hr className="bg-grey-500 p-3" />
+              <div className="flex justify-between pb-4">
+                <div className="flex">
+                  <div className="pr-2">
+                    <Image src={"/profilepic.png"} width="48" height="48" />
+                  </div>
+                  <div>
+                    <h2 className="text-base text-white font-bold pt-1">
+                      Event Organiser name
+                    </h2>
+                    <span className="align-top text-xs text-grey font-semibold">
+                      12 events
+                    </span>
+                  </div>
+                </div>
+                <div className="">
+                  <Image src={"/globeicon.png"} width="36" height="36" />
+                </div>
+              </div>
+              <hr className="bg-grey-500" />
+            </div>
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+            {/* event image section - 375px+ screen */}
+            <div className="relative py-3 sm:mt-4 xl:mt-8 2xl:mt-24">
+              <h2 className="text-base text-white font-bold pt-1 pb-3 lg:pt-6">
+                Event Images
+              </h2>
+              <div className="hidden sm:block sm:grid sm:place-items-center sm:absolute sm:border-2 sm:border-white-400 sm:py-1.5 sm:px-2 sm:mt-[10%] sm:rounded-lg lg:mt-16 xl:mt-20 2xl:mt-24 sm:-ml-10 ">
+                <Image src={"/leftArrow.png"} width="6" height="12" />
+              </div>
 
-        footer img {
-          margin-left: 0.5rem;
-        }
+              <div className=" flex gap-x-2.5 overflow-hidden sm:rounded-lg">
+                <div className="min-w-max">
+                  <Image src={"/eventImage1.png"} width="120" height="120" />
+                </div>
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+                <div className="min-w-max">
+                  <Image src={"/eventImage2.png"} width="120" height="120" />
+                </div>
+                <div className="min-w-max">
+                  <Image src={"/eventImage3.png"} width="120" height="120" />
+                </div>
+                <div className="min-w-max">
+                  <Image src={"/eventImage4.png"} width="120" height="120" />
+                </div>
+                <div className="min-w-max">
+                  <Image src={"/eventImage5.png"} width="120" height="120" />
+                </div>
+              </div>
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+              <div className="hidden sm:block sm:grid sm:place-items-center sm:absolute sm:border-2 sm:border-white-400 sm:py-1.5 sm:px-2 sm:-mt-[78px] sm:mr-1 xl:-mt-24 2xl:-mt-28 -right-10 sm:rounded-lg">
+                <Image src={"/rightArrow.png"} width="6" height="12" />
+              </div>
+            </div>
+            {/* event images section - 375px+ screen */}
 
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
+            {/* ticket section */}
+            <div className="flex justify-between sm:pt-7">
+              <div>
+                <span className="align-top text-sm text-grey font-medium">
+                  Ticket starts at
+                </span>
+                <div className="flex">
+                  <h2 className="text-lgx text-white font-bold pt-1">15,00</h2>
+                  <div className="mt-3.5 pl-2">
+                    <span className="text-xs text-white font-semibold">
+                      EUR
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button className="text-black text-base bg-white font-bold w-[168px] sm:w-60 h-12 rounded-1xl">
+                  Buy a Ticket
+                </button>
+              </div>
+            </div>
+            {/* ticket section */}
+          </div>
+        </div>
 
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
+        {/* event image section 1024px+ screens */}
+        <div className="hidden lg:block relative py-0 sm:mt-4 xl:mt-8 2xl:mt-12 lg:mb-20">
+          <h2 className="text-base xl:text-xl text-white font-bold pt-1 pb-3 lg:pt-6">
+            Event Images
+          </h2>
+          <div className="hidden sm:block sm:grid sm:place-items-center sm:absolute sm:border-2 sm:border-white-400 sm:py-1.5 sm:px-2 sm:mt-[10%] sm:rounded-lg lg:mt-16 xl:mt-20 2xl:mt-24 sm:-ml-10 ">
+            <Image src={"/leftArrow.png"} width="6" height="12" />
+          </div>
 
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
+          {/* 1024px screen event images */}
+          <div className=" flex lg:gap-x-6 overflow-hidden sm:rounded-lg xl:hidden">
+            <div className="min-w-max">
+              <Image src={"/eventImage1.png"} width="140" height="140" />
+            </div>
 
-        .title,
-        .description {
-          text-align: center;
-        }
+            <div className="min-w-max">
+              <Image src={"/eventImage2.png"} width="140" height="140" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage3.png"} width="140" height="140" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage4.png"} width="140" height="140" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage5.png"} width="140" height="140" />
+            </div>
+          </div>
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
+          {/* 1280px screen event images */}
+          <div className="hidden xl:flex flex lg:gap-x-8 overflow-hidden sm:rounded-lg 2xl:hidden">
+            <div className="min-w-max">
+              <Image src={"/eventImage1.png"} width="180" height="180" />
+            </div>
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
+            <div className="min-w-max">
+              <Image src={"/eventImage2.png"} width="180" height="180" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage3.png"} width="180" height="180" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage4.png"} width="180" height="180" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage5.png"} width="180" height="180" />
+            </div>
+          </div>
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
+          {/* 1536+px screen event images */}
+          <div className="hidden 2xl:flex flex lg:gap-x-8 overflow-hidden sm:rounded-lg">
+            <div className="min-w-max">
+              <Image src={"/eventImage1.png"} width="200" height="200" />
+            </div>
 
-          max-width: 800px;
-          margin-top: 3rem;
-        }
+            <div className="min-w-max">
+              <Image src={"/eventImage2.png"} width="200" height="200" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage3.png"} width="200" height="200" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage4.png"} width="200" height="200" />
+            </div>
+            <div className="min-w-max">
+              <Image src={"/eventImage5.png"} width="200" height="200" />
+            </div>
+          </div>
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+          <div className="hidden sm:block sm:grid sm:place-items-center sm:absolute sm:border-2 sm:border-white-400 sm:py-1.5 sm:px-2 sm:-mt-[78px] sm:mr-1 xl:-mt-24 2xl:-mt-28 -right-10 sm:rounded-lg">
+            <Image src={"/rightArrow.png"} width="6" height="12" />
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default HomePage;
